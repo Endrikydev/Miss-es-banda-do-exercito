@@ -1,0 +1,38 @@
+{% extends 'basemissoes.html' %}
+<!-- Funcionalidade Flask na hora de renderizar a página e visitar a página basemissoes -->
+{% block content %}
+    <div class="container mt-3">
+        <h1>Missões da semana</h1>
+        <a href="{{ url_for('criar_missao')}}" class="btn btn-primary">Adicionar</a>
+        <hr>
+        <table class="table"> 
+            <thead> 
+                <tr> 
+                    <th>ID</th> 
+                    <th>Data</th> 
+                    <th>Turno</th> 
+                    <th>Local</th> 
+                    <th>Missão</th> 
+                    <th>Banda</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Itera sobre a lista de missões diretamente -->
+                {% for missao in missoes %}
+                <tr>
+                    <td>{{ missao['id'] }}</td> 
+                    <td>{{ missao['data'] }}</td> 
+                    <td>{{ missao['turno'] }}</td> 
+                    <td>{{ missao['local'] }}</td> 
+                    <td>{{ missao['missao'] }}</td> 
+                    <td>{{ missao['banda'] }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_missao', id=missao['id']) }}">Editar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

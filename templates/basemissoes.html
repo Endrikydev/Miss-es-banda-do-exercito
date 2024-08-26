@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QUADRO DE MISSÕES BANDA DE MUSICA DA 5° DIVISÃO DE EXERCITO</title>
+        <!--funcionalidade flask que chama a formatação do bootstrap da pasta static -->
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">MISSÕES</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+        <!--funcionalidade do flask que subtitui um template -->
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

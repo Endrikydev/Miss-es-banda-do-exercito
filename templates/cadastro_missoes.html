@@ -1,0 +1,50 @@
+ {% extends 'basemissoes.html' %}  
+ {% block content %}
+    <h1>Cadastro e alteração de missões</h1> 
+
+    <form method="POST" enctype="multipart/form-data" action="" class="needs-validation" data-toggle="validator"> 
+
+        <div class="form-group"> 
+            <label for="id">ID:</label> 
+            <input type="number" class="form-control" id="id" name="id" value="{{ id }}" required> 
+            <div class="invalid-feedback">Campo obrigatório.</div> 
+        </div> 
+
+        <div class="form-group"> 
+            <label for="data">Data:</label> 
+            <input type="text" class="form-control" id="data" name="data" value="{{ data }}" required> 
+            <div class="invalid-feedback">Campo obrigatório.</div> 
+        </div> 
+
+        <div class="form-group"> 
+            <label for="turno">Turno:</label> 
+            <input type="text" class="form-control" id="turno" name="turno" value="{{ turno }}" required> 
+            <div class="invalid-feedback">Campo obrigatório.</div> 
+        </div> 
+
+            <div class="form-group"> 
+            <label for="local">Local:</label> 
+            <input type="text" class="form-control" id="local" name="local" value="{{ local }}" required> 
+            <div class="invalid-feedback">Campo obrigatório.</div> 
+        </div> 
+
+        <div class="form-group"> 
+            <label for="missao">Missão:</label> 
+            <input type="text" class="form-control" id="missao" name="missao" value="{{ missao }}" required> 
+            <div class="invalid-feedback">Campo obrigatório.</div> 
+        </div>   
+        
+            <div class="form-group"> 
+            <label for="banda">banda:</label> 
+            <input type="text" class="form-control" id="banda" name="banda" value="{{ banda }}" required> 
+            <div class="invalid-feedback">Campo obrigatório.</div> 
+        </div> 
+
+        <input type="submit" class="btn btn-primary" name="salvar" value="salvar">
+        <a href="{{ url_for('home')}}" class="btn btn-secondary">cancelar</a>
+
+        <input type="submit" class="btn btn-danger" name="excluir" value="excluir">
+
+        
+   </form>
+{% endblock %}
